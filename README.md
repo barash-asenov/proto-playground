@@ -10,7 +10,7 @@ protoc -I=./protos --go_out=. ./protos/addressbookv1.proto
 
 > Go into docker
 ```sh
-docker run -it --mount type=bind,source=./,target=/app composer /bin/bash
+docker run -it --volume ./:/app composer /bin/bash
 
 # when inside
 
