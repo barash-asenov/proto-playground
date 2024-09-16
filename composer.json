@@ -1,0 +1,12 @@
+{
+    "name": "root/project",
+    "autoload": {
+        "psr-4": {
+            "Root\\Project\\": "src/"
+        }
+    },
+    "require": {
+        "google/protobuf": "^4.28",
+        "psy/psysh": "@stable"
+    }
+}
