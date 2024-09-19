@@ -15,9 +15,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class PhoneNumber extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string number = 1;</code>
+     * Generated from protobuf field <code>int32 number = 1;</code>
      */
-    protected $number = '';
+    protected $number = 0;
     /**
      * Generated from protobuf field <code>.addressbookv1.PhoneType type = 2;</code>
      */
@@ -29,7 +29,7 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $number
+     *     @type int $number
      *     @type int $type
      * }
      */
@@ -39,8 +39,8 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string number = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>int32 number = 1;</code>
+     * @return int
      */
     public function getNumber()
     {
@@ -48,13 +48,13 @@ class PhoneNumber extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string number = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>int32 number = 1;</code>
+     * @param int $var
      * @return $this
      */
     public function setNumber($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkInt32($var);
         $this->number = $var;
 
         return $this;

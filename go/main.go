@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"path/filepath"
 
@@ -17,9 +18,9 @@ const dataDir = "../data"
 func main() {
 	fmt.Println("hey there")
 
-	phonev1 := addressbookv2bp.PhoneNumber{
-		Number: "01234 1234",
-		Type:   addressbookv2bp.PhoneType_PHONE_TYPE_WORK,
+	phonev1 := addressbookv1bp.PhoneNumber{
+		Number: math.MaxInt32 + 1,
+		Type:   addressbookv1bp.PhoneType_PHONE_TYPE_HOME,
 	}
 
 	rawProto, err := proto.Marshal(&phonev1)
@@ -34,7 +35,7 @@ func main() {
 		log.Fatalf("Failed to write: %v", err)
 	}
 
-	phonev2 := &addressbookv1bp.PhoneNumber{}
+	phonev2 := &addressbookv2bp.PhoneNumber{}
 	err = proto.Unmarshal(rawProto, phonev2)
 	if err != nil {
 		log.Fatalf("Failed to unmarshal: %v", err)

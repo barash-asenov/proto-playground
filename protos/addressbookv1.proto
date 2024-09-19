@@ -10,7 +10,7 @@ enum PhoneType {
 }
 
 message PhoneNumber {
-  string number = 1;
+  int64 number = 1;
   PhoneType type = 2;
 }
 
