@@ -4,12 +4,15 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"path/filepath"
 
 	"protobuf-playground/protos/pbs/addressbookv1bp"
 	"protobuf-playground/protos/pbs/addressbookv2bp"
 
 	"google.golang.org/protobuf/proto"
 )
+
+const dataDir = "../data"
 
 func main() {
 	fmt.Println("hey there")
@@ -24,7 +27,9 @@ func main() {
 		log.Fatalf("Failed to marshal: %v", err)
 	}
 
-	err = os.WriteFile("phone.pb", rawProto, 0o644)
+	fileToWrite := filepath.Join(dataDir, "phone.pb")
+
+	err = os.WriteFile(fileToWrite, rawProto, 0o644)
 	if err != nil {
 		log.Fatalf("Failed to write: %v", err)
 	}
